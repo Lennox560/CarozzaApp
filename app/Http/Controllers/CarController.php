@@ -20,4 +20,9 @@ class CarController extends Controller
         $manufacturers = Manufacturer::orderBy('name')->pluck('name','id')->prepend('All Manufacturers', '');
         return view('cars.index', compact('cars','manufacturers'));
     }
+
+    public function show($id){
+        $car = Car::find($id);
+        return view('cars.show',compact('car'));
+    }
 }
