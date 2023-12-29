@@ -15,3 +15,10 @@ Route::get('/manufacturers',[ManufacturerController::class,'index'])->name('manu
 
 Route::get('/cars/show/{id}',[CarController::class,'show'])->name('cars.show');
 
+Route::get('/cars/create',[CarController::class,'create'])->name('cars.create');
+
+Route::post('cars',[CarController::class,'store'])->name('cars.store');
+//Route::post('contacts',[ContactController::class, 'store'])->name('contacts.store');
+
+//Route::get('contacts/create',[ContactController::class,'create'])->name('contacts.create');
+
