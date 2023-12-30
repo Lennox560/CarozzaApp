@@ -39,12 +39,21 @@
                         <p class="form-control-plaintext text-muted">{{$car->manufacturer->name}}</p>
                       </div>
                     </div>
+
                     <hr>
+
                     <div class="form-group row mb-0">
                       <div class="col-md-9 offset-md-3">
                           <a href="{{route('cars.edit',$car->id)}}" class="btn btn-info">Edit</a>
-                          <a href="#" class="btn btn-outline-danger">Delete</a>
+
+                          <form id="form-delete" action="{{ route('cars.destroy', $car->id) }}" method="POST" style="display: inline;">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn-delete btn btn-outline-danger">Delete</button>
+                          </form>
+
                           <a href="{{ route('cars.index')}}" class="btn btn-outline-secondary">Cancel</a>
+                                                    
                       </div>
                     </div>
                   </div>
