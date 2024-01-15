@@ -27,7 +27,7 @@
                     <div class="form-group row">
                       <label for="email" class="col-md-3 col-form-label">Salesperson Email</label>
                       <div class="col-md-9">
-                        <input type="text" name="salesperson_email" id="salesperson_email" value="{{old('salesperson_email', $car->salesperson_email)}}" class="form-control @error('email') is-invalid @enderror">
+                        <input type="email" name="salesperson_email" id="salesperson_email" value="{{old('salesperson_email', $car->salesperson_email)}}" class="form-control @error('salesperson_email') is-invalid @enderror">
                         @error('salesperson_email')
                         <div class="invalid-feedback">
                             {{$message}}
